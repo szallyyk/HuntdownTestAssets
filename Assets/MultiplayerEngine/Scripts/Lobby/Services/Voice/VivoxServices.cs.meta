@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: ee6a26b0240741f449b458d8d59d169e
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Scripts/Lobby/Services/Voice/VivoxServices.cs
+  uploadId: 837434

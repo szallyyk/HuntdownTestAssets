@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6a613deae479f564495cf97f8bf91932
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Art/Vfx/Materials/BulletTrail.mat
+  uploadId: 837434

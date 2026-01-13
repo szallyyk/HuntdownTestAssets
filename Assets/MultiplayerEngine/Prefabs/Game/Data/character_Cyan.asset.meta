@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d73bdf90fd6317c4e8c29809ec1935a7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Prefabs/Game/Data/character_Cyan.asset
+  uploadId: 837434

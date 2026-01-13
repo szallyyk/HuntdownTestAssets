@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cab3ccfbdd33aea44af57a06923b0e1e, type: 3}
+  m_Name: ChacterWeaponIK
+  m_EditorClassIdentifier: Assembly-CSharp::Ignitives.MultiplayerEngine.WeaponIk
+  weapons:
+  - weaponId: Rifle
+    rightHandIK:
+      targetPos: {x: 0.00019, y: -0.00022, z: -0.00185}
+      targetRot: {x: 0.011570153, y: 0.16993831, z: -0.7605016, w: 0.62659746}
+      hintPos: {x: -0.00092, y: -0.00436, z: -0.00699}
+    leftHandIK:
+      targetPos: {x: -0.00124, y: -0.00003, z: 0.00355}
+      targetRot: {x: -0.6783049, y: 0.1204026, z: -0.6514203, w: 0.31789508}
+      hintPos: {x: -0.00367, y: -0.00976, z: 0.00417}
+    rightHandAimIK:
+      targetPos: {x: 0.00064, y: -0.00115, z: -0.0012}
+      targetRot: {x: 0.05084197, y: -0.22594182, z: -0.8442608, w: 0.4833105}
+      hintPos: {x: 0.00557, y: -0.00428, z: -0.00257}
+    leftHandAimIK:
+      targetPos: {x: -0.00143, y: -0.00002, z: 0.00257}
+      targetRot: {x: -0.53392166, y: 0.10169855, z: -0.785147, w: 0.2968656}
+      hintPos: {x: -0.00424, y: -0.00188, z: -0.00321}
+    holdTransform:
+      position: {x: 0.06884423, y: 0.23583484, z: 0.13410348}
+      rotation: {x: -0.1489343, y: -0.58701277, z: -0.08881163, w: 0.7907889}
+    aimTransform:
+      position: {x: -0.062, y: 0.384, z: 0.273}
+      rotation: {x: 0.004100685, y: 0.03513134, z: 0.003620557, w: -0.9993677}

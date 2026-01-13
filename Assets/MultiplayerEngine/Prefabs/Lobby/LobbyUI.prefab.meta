@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 297bb7d96ff840a47a0c57ba72330761
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Prefabs/Lobby/LobbyUI.prefab
+  uploadId: 837434

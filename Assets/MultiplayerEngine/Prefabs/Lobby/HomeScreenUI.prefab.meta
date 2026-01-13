@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 368cca0c34ce2034490c684e1e9b8e03
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Prefabs/Lobby/HomeScreenUI.prefab
+  uploadId: 837434

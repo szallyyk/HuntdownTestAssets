@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cd2a66129db544340a46d06629f68e52
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Prefabs/Lobby/Managers/ProfileManager.prefab
+  uploadId: 837434

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 52d243276b86ac5408a916a5db37e953
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Prefabs/Lobby/Items/Voice/VoiceMemberItem.prefab
+  uploadId: 837434

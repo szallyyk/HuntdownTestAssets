@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 674a1dfe2d6da4244a5d5a3f0dc97c9e
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Scripts/Lobby/Services/Lobby/UnityLobby.cs
+  uploadId: 837434

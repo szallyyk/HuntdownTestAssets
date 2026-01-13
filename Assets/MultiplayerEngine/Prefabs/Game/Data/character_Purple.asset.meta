@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 31087d121770fdb4da3d61c060178702
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Prefabs/Game/Data/character_Purple.asset
+  uploadId: 837434

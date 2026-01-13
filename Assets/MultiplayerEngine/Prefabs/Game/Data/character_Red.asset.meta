@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2f69fd702d6ca3843b306081f436ba29
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Prefabs/Game/Data/character_Red.asset
+  uploadId: 837434

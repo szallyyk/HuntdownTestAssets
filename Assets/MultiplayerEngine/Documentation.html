@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Engine Pro - Documentation</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #10b981;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --bg-code: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: #334155;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --success: #22c55e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+
+        header .tagline {
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+        }
+
+        header .version {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-top: 16px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+            padding: 16px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        nav a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Main Content */
+        main {
+            padding: 48px 0;
+        }
+
+        section {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+            border: 1px solid var(--border);
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.75rem;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3 {
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            margin: 24px 0 12px;
+        }
+
+        h4 {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            margin: 16px 0 8px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+
+        /* Lists */
+        ul,
+        ol {
+            margin: 16px 0;
+            padding-left: 24px;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Code */
+        code {
+            background: var(--bg-code);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: var(--secondary);
+        }
+
+        pre {
+            background: var(--bg-code);
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: var(--text-primary);
+        }
+
+        /* Alerts */
+        .alert {
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 16px 0;
+            border-left: 4px solid;
+        }
+
+        .alert-info {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: var(--primary);
+        }
+
+        .alert-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--warning);
+        }
+
+        .alert-danger {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--danger);
+        }
+
+        .alert-success {
+            background: rgba(34, 197, 94, 0.1);
+            border-color: var(--success);
+        }
+
+        .alert-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        /* Cards Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .card {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .card h4 {
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+
+        th,
+        td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--bg-dark);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        td {
+            color: var(--text-secondary);
+        }
+
+        tr:hover td {
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        /* Steps */
+        .steps {
+            counter-reset: step;
+        }
+
+        .step {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 24px;
+        }
+
+        .step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 32px 0;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            nav ul {
+                gap: 4px;
+            }
+
+            nav a {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>🎮 Multiplayer Engine Pro</h1>
+            <p class="tagline">Complete Multiplayer Solution for Unity</p>
+            <span class="version">Version 1.0</span>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#setup">Setup Guide</a></li>
+                <li><a href="#lobby">Lobby System</a></li>
+                <li><a href="#characters">Characters</a></li>
+                <li><a href="#weapons">Weapons</a></li>
+                <li><a href="#api">API Reference</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Introduction -->
+        <section id="introduction">
+            <h2>📖 Introduction</h2>
+            <p>Welcome to <strong>Multiplayer Engine Pro</strong>, a comprehensive multiplayer framework designed to
+                help Unity developers create engaging multiplayer experiences quickly and efficiently. Whether you're
+                building a competitive shooter, cooperative survival game, or social multiplayer experience, this asset
+                provides all the essential building blocks you need.</p>
+
+            <h3>What's Included</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">🔐</div>
+                    <h4>Authentication System</h4>
+                    <p>Complete sign-in/sign-up flow with Unity Authentication or Steam integration.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏠</div>
+                    <h4>Lobby System</h4>
+                    <p>Create, join, and manage game lobbies with privacy controls and player limits.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">👥</div>
+                    <h4>Friends System</h4>
+                    <p>Send friend requests, manage friends list, and invite friends to games.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎤</div>
+                    <h4>Voice Chat</h4>
+                    <p>Integrated voice communication using Vivox or Steam Voice.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎭</div>
+                    <h4>Character System</h4>
+                    <p>Third-person controller with networked movement and animations.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚔️</div>
+                    <h4>Weapon System</h4>
+                    <p>Melee and ranged weapons with IK positioning and networked combat.</p>
+                </div>
+            </div>
+
+            <h3>Supported Platforms</h3>
+            <ul>
+                <li><strong>Unity Services:</strong> Cross-platform (PC, Console, Mobile)</li>
+                <li><strong>Steam Services:</strong> PC (Windows, Mac, Linux)</li>
+            </ul>
+
+            <div class="alert alert-info">
+                <div class="alert-title">💡 Pro Tip</div>
+                <p>You can switch between Unity Services and Steam Services using scripting define symbols. Only one can
+                    be active at a time.</p>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features">
+            <h2>✨ Features</h2>
+
+            <h3>Core Features</h3>
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Netcode for GameObjects</td>
+                    <td>Built on Unity's official networking solution</td>
+                </tr>
+                <tr>
+                    <td>Relay Service</td>
+                    <td>No dedicated servers required - uses Unity Relay</td>
+                </tr>
+                <tr>
+                    <td>Cross-Platform</td>
+                    <td>Works on PC, Console, and Mobile</td>
+                </tr>
+                <tr>
+                    <td>Steam Integration</td>
+                    <td>Optional Steam networking via Facepunch</td>
+                </tr>
+            </table>
+
+            <h3>Lobby Features</h3>
+            <ul>
+                <li>Create public or private lobbies</li>
+                <li>Join via lobby browser or invite code</li>
+                <li>Real-time lobby updates</li>
+                <li>Player ready system</li>
+                <li>Host migration support</li>
+                <li>Character selection in lobby</li>
+                <li>Game mode selection (FreeForAll, TeamDeathmatch, CaptureTheFlag)</li>
+            </ul>
+
+            <h3>Combat Features</h3>
+            <ul>
+                <li>Melee weapons with animation events</li>
+                <li>Ranged weapons (Auto/Single fire modes)</li>
+                <li>Projectile system with pooling</li>
+                <li>Networked health and damage</li>
+                <li>IK-based weapon positioning</li>
+                <li>Aim assist and camera integration</li>
+            </ul>
+
+            <h3>Social Features</h3>
+            <ul>
+                <li>Friends list management</li>
+                <li>Friend requests (send, accept, decline)</li>
+                <li>Game invites</li>
+                <li>Presence system (Online, Offline, InGame, InLobby)</li>
+                <li>Voice chat with mute controls</li>
+                <li>Text chat messaging</li>
+            </ul>
+        </section>
+
+        <!-- Setup Guide -->
+        <section id="setup">
+            <h2>🚀 Setup Guide</h2>
+
+            <h3>Requirements</h3>
+            <ul>
+                <li>Unity 2022.3 LTS or newer</li>
+                <li>Netcode for GameObjects package</li>
+                <li>Unity Services Core (for Unity Services mode)</li>
+                <li>Facepunch.Steamworks (for Steam mode)</li>
+            </ul>
+
+            <h3>Installation Steps</h3>
+            <div class="steps">
+                <div class="step">
+                    <h4>Import the Package</h4>
+                    <p>Import Multiplayer Engine Pro from the Unity Asset Store or your package folder into your Unity
+                        project.</p>
+                </div>
+
+                <div class="step">
+                    <h4>Configure Scripting Defines</h4>
+                    <p>Go to <code>Edit > Project Settings > Player > Scripting Define Symbols</code></p>
+                    <p>Add one of the following:</p>
+                    <pre><code>UNITY_SERVICES    // For Unity Gaming Services
+STEAM_SERVICES    // For Steam integration</code></pre>
+                </div>
+
+                <div class="step">
+                    <h4>Setup Unity Services (if using UNITY_SERVICES)</h4>
+                    <ul>
+                        <li>Go to <code>Edit > Project Settings > Services</code></li>
+                        <li>Link your Unity project</li>
+                        <li>Enable: Authentication, Lobby, Relay, Cloud Save, Vivox</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4>Configure the NetworkManager</h4>
+                    <p>Open the <code>Lobby</code> scene and locate the <code>NetworkManager</code> object:</p>
+                    <ul>
+                        <li>Ensure <code>UnityTransport</code> is attached (for Unity Services)</li>
+                        <li>Or <code>SteamNetworkingSocketsTransport</code> (for Steam)</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4>Setup Player Prefabs</h4>
+                    <p>Add your character prefabs to the <code>PlayerProfileManager</code>:</p>
+                    <ul>
+                        <li>Create a <code>CharacterData</code> ScriptableObject for each character</li>
+                        <li>Assign the prefab and character ID</li>
+                        <li>Add to the CharacterData list in PlayerProfileManager</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4>Configure Scenes</h4>
+                    <p>Add your scenes to Build Settings in order:</p>
+                    <ol>
+                        <li><code>Lobby</code> - Main menu and lobby</li>
+                        <li><code>Game</code> - Your gameplay scene</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="alert alert-warning">
+                <div class="alert-title">⚠️ Important</div>
+                <p>Make sure only ONE service define is active at a time. Having both <code>UNITY_SERVICES</code> and
+                    <code>STEAM_SERVICES</code> will cause compilation errors.</p>
+            </div>
+        </section>
+
+        <!-- Lobby System -->
+        <section id="lobby">
+            <h2>🏠 Lobby System</h2>
+
+            <h3>Overview</h3>
+            <p>The lobby system manages the pre-game experience where players gather, select characters, and prepare for
+                the match. It's built around the <code>LobbyManager</code> singleton that handles all lobby operations.
+            </p>
+
+            <h3>Key Components</h3>
+            <table>
+                <tr>
+                    <th>Component</th>
+                    <th>Purpose</th>
+                </tr>
+                <tr>
+                    <td>LobbyManager</td>
+                    <td>Core lobby functionality (create, join, leave, update)</td>
+                </tr>
+                <tr>
+                    <td>SessionManager</td>
+                    <td>Handles game session transitions and scene loading</td>
+                </tr>
+                <tr>
+                    <td>AuthenticationManager</td>
+                    <td>User sign-in and authentication</td>
+                </tr>
+                <tr>
+                    <td>FriendsManager</td>
+                    <td>Friends list and invites</td>
+                </tr>
+                <tr>
+                    <td>VoiceManager</td>
+                    <td>Voice chat in lobby</td>
+                </tr>
+            </table>
+
+            <h3>Creating a Lobby</h3>
+            <pre><code>// Create a public lobby with max 4 players
+await LobbyManager.Instance.CreateLobby(
+    lobbyName: "My Awesome Lobby",
+    maxPlayers: 4,
+    isPrivate: false,
+    gameMode: GameMode.FreeForAll
+);</code></pre>
+
+            <h3>Joining a Lobby</h3>
+            <pre><code>// Join by lobby ID
+await LobbyManager.Instance.JoinLobby(lobbyId);
+
+// Join by code
+await LobbyManager.Instance.JoinLobbyByCode(joinCode);</code></pre>
+
+            <h3>Lobby Events</h3>
+            <pre><code>// Subscribe to lobby events
+LobbyManager.OnLobbyCreated += HandleLobbyCreated;
+LobbyManager.OnLobbyJoined += HandleLobbyJoined;
+LobbyManager.OnLobbyUpdated += HandleLobbyUpdated;
+LobbyManager.OnLobbyLeft += HandleLobbyLeft;</code></pre>
+
+            <h3>Player Ready System</h3>
+            <pre><code>// Toggle ready state
+await LobbyManager.Instance.UpdateReadyState(isReady: true);
+
+// Start game when all players ready (host only)
+await LobbyManager.Instance.StartGameAsync();</code></pre>
+
+            <h3>Game Modes</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>FreeForAll</h4>
+                    <p>Every player for themselves. Last one standing wins.</p>
+                </div>
+                <div class="card">
+                    <h4>TeamDeathmatch</h4>
+                    <p>Two teams compete. Team with most eliminations wins.</p>
+                </div>
+                <div class="card">
+                    <h4>CaptureTheFlag</h4>
+                    <p>Capture the enemy flag while defending your own.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Characters -->
+        <section id="characters">
+            <h2>🎭 Character System</h2>
+
+            <h3>Overview</h3>
+            <p>The character system provides a complete third-person controller with networked movement, animations, and
+                interaction capabilities.</p>
+
+            <h3>Core Components</h3>
+            <table>
+                <tr>
+                    <th>Component</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>PlayerController</td>
+                    <td>Handles interactions, object pickup, and player logic</td>
+                </tr>
+                <tr>
+                    <td>ThirdPersonController</td>
+                    <td>Movement, jumping, camera control</td>
+                </tr>
+                <tr>
+                    <td>HealthManager</td>
+                    <td>Health tracking and damage processing</td>
+                </tr>
+                <tr>
+                    <td>WeaponManager</td>
+                    <td>Weapon handling, aiming, and IK</td>
+                </tr>
+                <tr>
+                    <td>ClientNetworkTransform</td>
+                    <td>Smooth networked position sync</td>
+                </tr>
+                <tr>
+                    <td>ClientNetworkAnimator</td>
+                    <td>Networked animation sync</td>
+                </tr>
+            </table>
+
+            <h3>Setting Up a Character Prefab</h3>
+            <div class="steps">
+                <div class="step">
+                    <h4>Add Required Components</h4>
+                    <p>Add these components to your character root:</p>
+                    <ul>
+                        <li><code>NetworkObject</code></li>
+                        <li><code>PlayerController</code></li>
+                        <li><code>ThirdPersonController</code></li>
+                        <li><code>HealthManager</code></li>
+                        <li><code>WeaponManager</code></li>
+                        <li><code>ClientNetworkTransform</code></li>
+                        <li><code>ClientNetworkAnimator</code></li>
+                        <li><code>CharacterController</code></li>
+                        <li><code>PlayerInput</code></li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4>Configure Animator</h4>
+                    <p>Ensure your Animator has these parameters:</p>
+                    <ul>
+                        <li><code>Speed</code> (float) - Movement speed</li>
+                        <li><code>Grounded</code> (bool) - Is on ground</li>
+                        <li><code>Jump</code> (bool) - Jump trigger</li>
+                        <li><code>FreeFall</code> (bool) - Falling state</li>
+                        <li><code>MotionSpeed</code> (float) - Animation speed multiplier</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h4>Create CharacterData</h4>
+                    <p>Create a <code>CharacterData</code> ScriptableObject:</p>
+                    <pre><code>// Right-click > Create > MultiplayerEngine > CharacterData
+// Set:
+// - CharacterId: unique identifier
+// - CharacterPrefab: your prefab reference
+// - DisplayName: shown in UI
+// - Icon: character portrait</code></pre>
+                </div>
+            </div>
+
+            <h3>ThirdPersonController Settings</h3>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>MoveSpeed</td>
+                    <td>2.0</td>
+                    <td>Walking speed</td>
+                </tr>
+                <tr>
+                    <td>SprintSpeed</td>
+                    <td>5.335</td>
+                    <td>Running speed</td>
+                </tr>
+                <tr>
+                    <td>JumpHeight</td>
+                    <td>1.2</td>
+                    <td>Jump height in meters</td>
+                </tr>
+                <tr>
+                    <td>Gravity</td>
+                    <td>-15.0</td>
+                    <td>Custom gravity value</td>
+                </tr>
+                <tr>
+                    <td>RotationSmoothTime</td>
+                    <td>0.12</td>
+                    <td>Character rotation smoothing</td>
+                </tr>
+            </table>
+
+            <h3>Health System</h3>
+            <pre><code>// Get health manager reference
+HealthManager health = GetComponent&lt;HealthManager&gt;();
+
+// Take damage
+health.TakeDamage(new DamageMessage(
+    sender: attackerTransform,
+    hitPoint: hitPosition,
+    damage: 25,
+    source: "Sword"
+));
+
+// Heal
+health.Heal(20);
+
+// Reset to max health
+health.ResetHealth();</code></pre>
+
+            <h3>Interaction System</h3>
+            <p>The <code>PlayerController</code> automatically detects nearby <code>Interactable</code> objects:</p>
+            <ul>
+                <li><strong>Interact Radius:</strong> Detection range (default: 2.0)</li>
+                <li><strong>Interact Angle:</strong> Field of view for detection (default: 60°)</li>
+                <li><strong>Check Interval:</strong> How often to scan (default: 0.1s)</li>
+            </ul>
+        </section>
+
+        <!-- Weapons -->
+        <section id="weapons">
+            <h2>⚔️ Weapon System</h2>
+
+            <h3>Overview</h3>
+            <p>The weapon system supports both melee and ranged weapons with full networking support, IK-based hand
+                positioning, and smooth aiming mechanics.</p>
+
+            <h3>Weapon Types</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">🗡️</div>
+                    <h4>Melee Weapons</h4>
+                    <p>Close-range weapons like swords, axes, and hammers. Uses animation events for damage timing.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔫</div>
+                    <h4>Shooter Weapons</h4>
+                    <p>Ranged weapons with projectiles. Supports Auto and Single fire modes with configurable fire
+                        rates.</p>
+                </div>
+            </div>
+
+            <h3>MeleeWeapon Setup</h3>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>weaponModel</td>
+                    <td>The visual model Transform</td>
+                </tr>
+                <tr>
+                    <td>weaponHolder</td>
+                    <td>Which hand bone to attach to (default: RightHand)</td>
+                </tr>
+                <tr>
+                    <td>pickupPosition</td>
+                    <td>Local position when held</td>
+                </tr>
+                <tr>
+                    <td>pickupRotation</td>
+                    <td>Local rotation when held</td>
+                </tr>
+                <tr>
+                    <td>attackAnimationTrigger</td>
+                    <td>Animator trigger name (default: "MeleeAttack")</td>
+                </tr>
+                <tr>
+                    <td>attackCooldown</td>
+                    <td>Time between attacks (default: 0.5s)</td>
+                </tr>
+            </table>
+
+            <h3>ShooterWeapon Setup</h3>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>projectilePrefab</td>
+                    <td>The bullet/projectile prefab</td>
+                </tr>
+                <tr>
+                    <td>muzzlePoint</td>
+                    <td>Where projectiles spawn from</td>
+                </tr>
+                <tr>
+                    <td>fireRate</td>
+                    <td>Shots per second</td>
+                </tr>
+                <tr>
+                    <td>shootMode</td>
+                    <td>Auto (hold to fire) or Single (tap to fire)</td>
+                </tr>
+                <tr>
+                    <td>muzzleFlash</td>
+                    <td>Optional muzzle flash effect</td>
+                </tr>
+                <tr>
+                    <td>shootSound</td>
+                    <td>Audio clip for firing</td>
+                </tr>
+            </table>
+
+            <h3>Fire Modes</h3>
+            <pre><code>public enum ShootMode
+{
+    Auto,    // Hold fire button for continuous shooting
+    Single   // Each press fires once
+}</code></pre>
+
+            <h3>WeaponManager</h3>
+            <p>The <code>WeaponManager</code> component handles:</p>
+            <ul>
+                <li>Current weapon tracking</li>
+                <li>Aiming state and camera integration</li>
+                <li>IK positioning for left and right hands</li>
+                <li>Smooth weapon transitions</li>
+                <li>Input handling for aim/fire</li>
+            </ul>
+
+            <h3>Creating a Custom Weapon</h3>
+            <div class="steps">
+                <div class="step">
+                    <h4>Create the Prefab</h4>
+                    <p>Create a new prefab with a <code>NetworkObject</code> component at the root.</p>
+                </div>
+
+                <div class="step">
+                    <h4>Add Weapon Script</h4>
+                    <p>Add either <code>MeleeWeapon</code> or <code>ShooterWeapon</code> component.</p>
+                </div>
+
+                <div class="step">
+                    <h4>Configure References</h4>
+                    <p>Set up the weapon model, IK hints, and any effects (particles, audio).</p>
+                </div>
+
+                <div class="step">
+                    <h4>Set Pickup Properties</h4>
+                    <p>Configure <code>holdPosition</code> and <code>holdRotation</code> in the Pickable base class.</p>
+                </div>
+            </div>
+
+            <div class="alert alert-info">
+                <div class="alert-title">💡 IK Tips</div>
+                <p>Create empty GameObjects for left/right hand hints and IK targets. Position them relative to the
+                    weapon model for natural hand placement when aiming.</p>
+            </div>
+        </section>
+
+        <!-- API Reference -->
+        <section id="api">
+            <h2>📚 API Reference</h2>
+
+            <h3>LobbyManager</h3>
+            <pre><code>public class LobbyManager
+{
+    // Properties
+    public static LobbyManager Instance { get; }
+    public LobbyData CurrentLobby { get; }
+    
+    // Events
+    public static event Action&lt;LobbyData&gt; OnLobbyCreated;
+    public static event Action&lt;LobbyData&gt; OnLobbyJoined;
+    public static event Action&lt;LobbyData&gt; OnLobbyUpdated;
+    public static event Action OnLobbyLeft;
+    
+    // Methods
+    Task CreateLobby(string name, int maxPlayers, bool isPrivate, GameMode mode);
+    Task JoinLobby(string lobbyId);
+    Task JoinLobbyByCode(string code);
+    Task LeaveLobby();
+    Task UpdatePlayerData(Dictionary&lt;string, string&gt; data);
+    Task UpdateReadyState(bool isReady);
+    Task StartGameAsync();
+    Task KickPlayer(string playerId);
+}</code></pre>
+
+            <h3>AuthenticationManager</h3>
+            <pre><code>public class AuthenticationManager
+{
+    public static AuthenticationManager Instance { get; }
+    
+    // Events
+    public static event Action&lt;bool&gt; OnAutoSignInCompleted;
+    public static event Action&lt;bool&gt; OnSignInCompleted;
+    public static event Action&lt;bool&gt; OnSignUpCompleted;
+    public static event Action&lt;bool&gt; OnSignOutCompleted;
+    public static event Action&lt;bool&gt; OnProfileSetupCompleted;
+    
+    // Methods
+    Task&lt;bool&gt; SignInAsync(string email, string password, bool rememberMe);
+    Task&lt;bool&gt; SignUpAsync(string email, string password, bool rememberMe);
+    Task&lt;bool&gt; SignOutAsync();
+    Task&lt;bool&gt; CheckForPlayerProfile();
+}</code></pre>
+
+            <h3>HealthManager</h3>
+            <pre><code>public class HealthManager : NetworkBehaviour
+{
+    // Properties
+    public NetworkVariable&lt;int&gt; Health { get; }
+    public int MaxHealth { get; }
+    public int MinHealth { get; }
+    
+    // Methods
+    void TakeDamage(DamageMessage message);
+    void Heal(int amount);
+    void ResetHealth();
+    
+    // Override for custom death
+    protected virtual void OnDeath();
+}</code></pre>
+
+            <h3>FriendsManager</h3>
+            <pre><code>public class FriendsManager
+{
+    public static FriendsManager Instance { get; }
+    
+    // Events
+    public static event Action&lt;List&lt;Friend&gt;&gt; OnFriendsUpdated;
+    public static event Action&lt;List&lt;FriendRequest&gt;&gt; OnRequestsUpdated;
+    public static event Action&lt;List&lt;LobbyInvite&gt;&gt; OnInvitesUpdated;
+    
+    // Methods
+    Task&lt;List&lt;Friend&gt;&gt; GetFriendsList();
+    Task&lt;List&lt;FriendRequest&gt;&gt; GetFriendRequests();
+    Task&lt;bool&gt; SendFriendRequest(string playerId);
+    Task&lt;bool&gt; AcceptFriendRequest(string playerId);
+    Task&lt;bool&gt; DeclineFriendRequest(string playerId);
+    Task&lt;bool&gt; Unfriend(string playerId);
+    void InviteToGame(string playerId);
+}</code></pre>
+
+            <h3>VoiceManager</h3>
+            <pre><code>public class VoiceManager
+{
+    public static VoiceManager Instance { get; }
+    
+    // Events
+    public static event Action&lt;List&lt;VoiceMemberSettings&gt;&gt; OnMembersUpdated;
+    public static event Action&lt;string, string&gt; OnTextMessageReceived;
+    
+    // Methods
+    Task JoinVoiceChat(string lobbyId);
+    Task LeaveVoiceChat();
+    void MuteMic();
+    void UnmuteMic();
+    void SetMicVolume(float volume);
+    void MuteSpeaker();
+    void UnmuteSpeaker();
+    void MuteMember(string memberId);
+    void UnmuteMember(string memberId);
+    void SendTextMessage(string message);
+}</code></pre>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <h2>❓ Frequently Asked Questions</h2>
+
+            <h3>General</h3>
+
+            <h4>Q: Can I use this for mobile games?</h4>
+            <p>A: Yes! When using Unity Services mode, the asset is fully cross-platform. Steam mode is PC-only.</p>
+
+            <h4>Q: Do I need a dedicated server?</h4>
+            <p>A: No. The asset uses Unity Relay (or Steam P2P) for host-based networking. One player acts as the host.
+            </p>
+
+            <h4>Q: How many players are supported?</h4>
+            <p>A: Unity Lobby supports up to 100 players per lobby. Practical limits depend on your game design.</p>
+
+            <h3>Technical</h3>
+
+            <h4>Q: Why am I getting compilation errors?</h4>
+            <p>A: Ensure you have exactly ONE scripting define set (<code>UNITY_SERVICES</code> OR
+                <code>STEAM_SERVICES</code>), not both.</p>
+
+            <h4>Q: Voice chat isn't working?</h4>
+            <p>A: For Unity Services, ensure Vivox is properly configured in the Unity Dashboard. For Steam, verify
+                Steamworks SDK integration.</p>
+
+            <h4>Q: Characters aren't spawning correctly?</h4>
+            <p>A: Check that: 1) SpawnManager has spawn points assigned, 2) Character prefabs are registered, 3) Player
+                has selected a character in lobby.</p>
+
+            <h3>Customization</h3>
+
+            <h4>Q: How do I add custom death behavior?</h4>
+            <p>A: Create a class that inherits from <code>HealthManager</code> and override the <code>OnDeath()</code>
+                method.</p>
+
+            <h4>Q: Can I add new game modes?</h4>
+            <p>A: Yes! Add new values to the <code>GameMode</code> enum and implement the corresponding logic in your
+                game scene.</p>
+
+            <h4>Q: How do I customize the UI?</h4>
+            <p>A: All UI components are in the <code>Scripts/Lobby/UI</code> folder. Modify the prefabs in
+                <code>Prefabs/Lobby</code> for visual changes.</p>
+
+            <div class="alert alert-success">
+                <div class="alert-title">📧 Need More Help?</div>
+                <p>Contact support at support@ignitives.com or visit our Discord community for assistance.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Multiplayer Engine Pro © 2025 Ignitives. All rights reserved.</p>
+            <p style="margin-top: 8px; font-size: 0.875rem;">Built with ❤️ for the Unity community</p>
+        </div>
+    </footer>
+</body>
+
+</html>

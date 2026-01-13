@@ -1,0 +1,28 @@
+This asset is governed by the Asset Store EULA; however, the following components are governed by the licenses indicated below:
+
+
+A. Unity Technologies – Standard Assets & Particle Pack
+This package contains content derived from Unity Technologies’ Standard Assets and Particle Pack, located at: Multiplayer Engine Lite/Demo/Art
+
+Source License: https://unity.com/legal/as-terms
+Original Creator: Unity Technologies
+
+These assets are used exclusively for demonstration purposes and reside in the Demo/ folder of this package.
+
+These assets are subject to Unity’s licensing terms and are not licensed for redistribution or commercial use beyond educational or demo content.
+If you wish to use them in your own project, please download them directly from Unity’s official repositories and review the applicable license agreements.
+
+
+B. Feather Icons  
+Website: https://feathericons.com  
+Author: Cole Bemis  
+License: MIT License  
+Copyright (c) 2013–2024 Cole Bemis
+
+These icons are licensed under the MIT License, which permits use, modification, and distribution, including in commercial projects.
+
+No changes were made to the icons except minor formatting or conversion for Unity compatibility.
+
+➤ Full license details are included in the "MultiplayerEngineLITE/Lobby/Art/Sprites/Icons" folder as a LICENSE.txt file.
+
+

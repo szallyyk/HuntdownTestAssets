@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dd2e8b75f19ac9347b4108edc6fbe026
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Art/Character/Materials/cyan/M_Armature_Body.mat
+  uploadId: 837434

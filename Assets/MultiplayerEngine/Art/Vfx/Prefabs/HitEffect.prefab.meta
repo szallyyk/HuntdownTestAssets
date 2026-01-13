@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d6550d2e463ffb84592f59b2148c5dc5
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Art/Vfx/Prefabs/HitEffect.prefab
+  uploadId: 837434

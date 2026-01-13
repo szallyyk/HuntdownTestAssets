@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 8202a23b16415204989de96b6535a417
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Scripts/Lobby/Services/Friends/SteamFriends.cs
+  uploadId: 837434

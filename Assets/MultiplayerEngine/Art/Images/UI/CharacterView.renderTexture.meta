@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5659b6f128dffd847bd0fc9b9447ad45
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 8400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Art/Images/UI/CharacterView.renderTexture
+  uploadId: 837434

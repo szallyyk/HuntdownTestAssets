@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 9c7201d8509ab5243ae2717f6d86b9bf
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Scripts/Game/Character/ClientNetworkTransform.cs
+  uploadId: 837434

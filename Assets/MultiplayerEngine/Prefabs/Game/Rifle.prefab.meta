@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 48c1005c78e5a6f4c8a30ea4998c5224
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Prefabs/Game/Rifle.prefab
+  uploadId: 837434

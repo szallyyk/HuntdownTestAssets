@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 48904d8cd79778f4e9fa84436aaf6c93
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Extra/SteamResources/steam_appid.txt
+  uploadId: 837434

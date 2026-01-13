@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: babce4cdd1308d643a32ba8806b6c43a
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Scripts/Lobby/Managers/AuthenticationManager.cs
+  uploadId: 837434

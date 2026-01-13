@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cf396d1d2faf1df4d9f92ec67185ab01
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 203992
+  packageName: Multiplayer Engine Pro - Steam & UGS Ready
+  packageVersion: 2.0
+  assetPath: Assets/MultiplayerEngine/Art/Animations/Lobby/4.controller
+  uploadId: 837434
